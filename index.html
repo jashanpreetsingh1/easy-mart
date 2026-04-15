@@ -1,0 +1,345 @@
+<!doctype html>
+<html class="no-js" lang="en-ca">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyMART</title>
+  <link rel="stylesheet" href="assets/css/foundation.css" />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+
+<!-- LOGIN MODAL —  exact IDs: loginModal / loginEmail / loginPassword / id="login" -->
+<div class="reveal" id="loginModal" data-reveal="data-reveal">
+  <h3 style="font-weight:800;margin-bottom:16px;">Welcome Back 👋</h3>
+  <form id="loginForm">
+    <div class="input-group">
+      <input type="email" id="loginEmail" placeholder="Email">
+    </div>
+    <div class="input-group">
+      <input type="password" id="loginPassword" placeholder="Password">
+    </div>
+    <button type="submit" id="login" class="button primaryBtn expanded">Login</button>
+    <div style="display:flex;justify-content:space-between;margin-top:12px;">
+      <a href="#" class="go_forgot linkBtn">Forgot password?</a>
+      <a href="#" class="go_register linkBtn">Create account</a>
+    </div>
+  </form>
+  <button class="close-button" data-close="data-close" aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<!-- HEADER -->
+<header class="siteHeader">
+  <div class="grid-container">
+    <div class="grid-x align-middle headerRow">
+      <div class="cell small-12 medium-3">
+        <span class="logo go_home pointer">Easy<span>MART</span></span>
+      </div>
+      <div class="cell small-12 medium-6">
+        <div class="navCenter">
+          <div class="searchWrap">
+            <span class="searchIcon">⌕</span>
+            <input id="topSearch" type="text" placeholder="Search products…" />
+            <span class="searchGo go_search pointer">Go</span>
+          </div>
+        </div>
+      </div>
+      <div class="cell small-12 medium-3">
+        <div class="headerIcons">
+          <span class="go_location iconBtn pointer">📍 Location</span>
+          <span id="open_login" class="open_login iconBtn pointer">👤 Login</span>
+          <span id="user_name" style="display:none;" class="iconBtn pointer"></span>
+          <span class="go_cart iconBtn pointer">🛒 Cart <span id="cartCount" style="background:var(--teal);color:#fff;border-radius:999px;padding:1px 7px;font-size:12px;font-weight:800;margin-left:4px;display:none;">0</span></span>
+        </div>
+      </div>
+    </div>
+    <!-- getDepartments() fills ul.location-dropdown with <li class="click-department"> from DB -->
+    <div class="categoryRow">
+      <div class="grid-x"><div class="cell">
+        <div class="dept-nav">
+          <span class="dept-nav-label">Departments ▾</span>
+          <ul class="location-dropdown">
+            <!-- filled by getDepartments() -->
+          </ul>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="grid-container appShell">
+
+  <!-- HOME -->
+  <article class="show-home hideAll">
+    <section class="wireCard heroWire">
+      <div class="grid-x grid-padding-x align-middle">
+        <div class="cell medium-5">
+          <h2 class="heroTitle">30% Off<br />Produce Mondays</h2>
+          <span class="button primaryBtn go_department pointer" data-dept="Produce">Buy Now</span>
+        </div>
+        <div class="cell medium-7">
+          <div class="heroMedia"><img src="assets/images/hereo.jpg" alt="hero"></div>
+        </div>
+      </div>
+    </section>
+    <section class="sectionWire">
+      <h3 class="sectionTitle">Our <span class="accent">Departments</span></h3>
+      <div class="grid-x grid-margin-x grid-margin-y small-up-2 medium-up-4">
+        <div class="cell"><span class="wireCard deptCard click-department pointer" data-name="Meat & Poultry" style="display:block;"><div class="imgBox"><img src="assets/images/meat.jpg" alt="meat"></div><div class="cardLabel">Meat &amp; Poultry</div></span></div>
+        <div class="cell"><span class="wireCard deptCard click-department pointer" data-name="Milk & Dairy" style="display:block;"><div class="imgBox"><img src="assets/images/dairay drinks.png" alt="dairy"></div><div class="cardLabel">Milk &amp; Dairy</div></span></div>
+        <div class="cell"><span class="wireCard deptCard click-department pointer" data-name="Produce" style="display:block;"><div class="imgBox"><img src="assets/images/fruits.png" alt="produce"></div><div class="cardLabel">Fruits &amp; Veg</div></span></div>
+        <div class="cell"><span class="wireCard deptCard click-department pointer" data-name="Bakery" style="display:block;"><div class="imgBox"><img src="assets/images/bread.jpg" alt="bakery"></div><div class="cardLabel">Bakery</div></span></div>
+        <div class="cell"><span class="wireCard deptCard click-department pointer" data-name="Drinks and Snacks" style="display:block;"><div class="imgBox"><img src="assets/images/drinks.jpg" alt="drinks"></div><div class="cardLabel">Drinks &amp; Snacks</div></span></div>
+        <div class="cell"><span class="wireCard deptCard click-department pointer" data-name="Drinks and Snacks" style="display:block;"><div class="imgBox"><img src="assets/images/snacks.jpg" alt="snacks"></div><div class="cardLabel">Drinks &amp; Snacks</div></span></div>
+        <div class="cell"><span class="wireCard deptCard click-department pointer" data-name="Deli" style="display:block;"><div class="imgBox"><img src="assets/images/deli.jpg" alt="deli"></div><div class="cardLabel">Deli</div></span></div>
+        <div class="cell"><span class="wireCard deptCard click-department pointer" data-name="Frozen" style="display:block;"><div class="imgBox"><img src="assets/images/frozen.jpg" alt="frozen"></div><div class="cardLabel">Frozen</div></span></div>
+      </div>
+    </section>
+    <section class="sectionWire">
+      <h3 class="sectionTitle">What's <span class="accent">New</span></h3>
+      <!-- Filled dynamically from database by getHomeFeatured() in main.js -->
+      <div class="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-4" id="homeProductsGrid">
+        <div class="cell" style="grid-column:1/-1; text-align:center; padding:20px; color:#6B7280;">Loading products…</div>
+      </div>
+    </section>
+  </article>
+
+  <!-- DEPARTMENT — getCard() puts cards into .products-grid -->
+  <article class="show-department hideAll">
+    <div class="crumb muted" id="deptCrumb">Home &gt; Department</div>
+    <div class="grid-x align-middle titleRow">
+      <div class="cell auto"><h2 class="pageTitle accent" id="deptTitle">Department</h2></div>
+      <div class="cell shrink"><span class="muted" style="margin-right:10px;">Sort by</span><span class="selectFake">Popularity ▾</span></div>
+    </div>
+    <div class="divider"></div>
+    <div class="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-3 products-grid"></div>
+  </article>
+
+  <!-- SEARCH — results shown in show-department section ( pattern) -->
+  <article class="show-search hideAll">
+    <div class="crumb muted">Home &gt; Search</div>
+    <h2 class="pageTitle">Search Products</h2>
+    <div class="wireCard">
+      <div class="grid-x grid-padding-x align-middle">
+        <div class="cell medium-9"><input type="text" id="searchInput" placeholder="Search products…" style="margin:0;"></div>
+        <div class="cell medium-3"><button class="button primaryBtn expanded searchGoBtn">Search</button></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- PRODUCT PAGE -->
+  <article class="show-product hideAll">
+    <div class="crumb muted" id="prodCrumb">Home &gt; Department</div>
+    <section class="wireCard">
+      <div class="grid-x grid-padding-x">
+        <div class="cell medium-5">
+          <div class="imgBox bigBox"><img id="prodImage" src="assets/images/milkChocaltae.webp" alt="product"></div>
+          <div class="wireMeta"><div class="metaTitle">UPC</div><div class="muted" id="prodUPC">—</div></div>
+        </div>
+        <div class="cell medium-7">
+          <div class="brand muted" id="prodBrand">Brand</div>
+          <h2 class="prodTitle" id="prodName">Product Name</h2>
+          <div class="price accent bigPrice" id="prodPrice">$0.00</div>
+          <div class="muted" id="prodUnit"></div>
+          <div class="prodActions"><button class="button primaryBtn add-btn">Add to Cart</button></div>
+          <div class="divider"></div>
+          <h3 class="sectionTitle">Product Description</h3>
+          <p class="muted" id="prodDesc">Description goes here.</p>
+        </div>
+      </div>
+      <div class="sectionWire" style="margin-top:20px;">
+        <h2 class="sectionTitle">Related Products</h2>
+        <div class="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-4 products-grid" id="relatedGrid"></div>
+      </div>
+    </section>
+  </article>
+
+  <!-- CART -->
+  <article class="show-cart hideAll">
+    <div class="crumb muted">Home &gt; Cart</div>
+    <h2 class="pageTitle">Your <span class="accent">Cart</span></h2>
+    <div class="wireCard">
+      <!-- drawCart() fills this div with real cart items from DB -->
+      <div class="cart-content">
+        <p class="muted" style="padding:20px 0 0;">Your cart is loading...</p>
+      </div>
+      <div class="grid-x grid-padding-x" style="margin-top:20px;">
+        <div class="cell medium-6 medium-offset-6 text-right">
+          <span class="button primaryBtn go_shipping pointer">Proceed to Checkout</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- REGISTER -->
+  <article class="show-register hideAll">
+    <div class="crumb muted">Home &gt; Register</div>
+    <h2 class="pageTitle">Create Account</h2>
+    <div class="wireCard">
+      <div class="grid-x grid-padding-x grid-margin-y">
+        <div class="cell medium-6"><label>First Name<input type="text" id="billing_name_first" placeholder="First Name"></label></div>
+        <div class="cell medium-6"><label>Last Name<input type="text" id="billing_name_last" placeholder="Last Name"></label></div>
+        <div class="cell medium-6"><label>Email<input type="email" id="email" placeholder="Email"></label></div>
+        <div class="cell medium-6"><label>Password<input type="password" id="password" placeholder="Password"></label></div>
+        <div class="cell"><button id="signup" class="button primaryBtn">Create Account</button></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- FORGOT -->
+  <article class="show-forgot hideAll">
+    <div class="crumb muted">Home &gt; Forgot Password</div>
+    <h2 class="pageTitle">Forgot Password</h2>
+    <div class="wireCard">
+      <label>Email Address<input type="email" placeholder="Enter your email"></label>
+      <span class="button primaryBtn go_reset pointer" style="display:inline-block;margin-top:14px;">Send Reset Link</span>
+    </div>
+  </article>
+
+  <!-- RESET -->
+  <article class="show-reset hideAll">
+    <div class="crumb muted">Home &gt; Reset Password</div>
+    <h2 class="pageTitle">Reset Password</h2>
+    <div class="wireCard">
+      <label>New Password<input type="password" placeholder="New password"></label>
+      <label>Confirm Password<input type="password" placeholder="Confirm password"></label>
+      <span class="button primaryBtn go_home pointer" style="display:inline-block;margin-top:14px;">Update Password</span>
+    </div>
+  </article>
+
+  <!-- SHIPPING -->
+  <article class="show-shipping hideAll">
+    <div class="crumb muted">Cart &gt; Shipping</div>
+    <h2 class="pageTitle">Shipping</h2>
+    <div class="wireCard">
+      <div class="grid-x grid-padding-x grid-margin-y">
+        <div class="cell medium-6"><label>First Name<input type="text" placeholder="First Name"></label></div>
+        <div class="cell medium-6"><label>Last Name<input type="text" placeholder="Last Name"></label></div>
+        <div class="cell"><label>Address<input type="text" placeholder="Address"></label></div>
+        <div class="cell medium-6"><label>City<input type="text" placeholder="City"></label></div>
+        <div class="cell medium-3"><label>Province<input type="text" placeholder="ON"></label></div>
+        <div class="cell medium-3"><label>Postal Code<input type="text" placeholder="L1H 1A1"></label></div>
+      </div>
+      <div class="flowBtns">
+        <span class="button hollowBtn go_cart pointer">Back</span>
+        <span class="button primaryBtn go_payment pointer">Next</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- PAYMENT -->
+  <article class="show-payment hideAll">
+    <div class="crumb muted">Shipping &gt; Payment</div>
+    <h2 class="pageTitle">Payment</h2>
+    <div class="wireCard">
+      <div class="grid-x grid-padding-x grid-margin-y">
+        <div class="cell"><label>Card Number<input type="text" placeholder="Card Number"></label></div>
+        <div class="cell medium-4"><label>Expiry<input type="text" placeholder="MM/YY"></label></div>
+        <div class="cell medium-4"><label>CVV<input type="text" placeholder="CVV"></label></div>
+        <div class="cell medium-4"><label>Postal Code<input type="text" placeholder="Postal"></label></div>
+      </div>
+      <div class="flowBtns">
+        <span class="button hollowBtn go_shipping pointer">Back</span>
+        <span class="button primaryBtn go_review pointer">Next</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- REVIEW -->
+  <article class="show-review hideAll">
+    <div class="crumb muted">Payment &gt; Review</div>
+    <h2 class="pageTitle">Review Order</h2>
+    <div class="wireCard">
+      <div class="imgBox" style="height:140px;margin-top:12px;">SHIPPING SUMMARY</div>
+      <div class="imgBox" style="height:180px;">CART SUMMARY</div>
+      <div class="flowBtns">
+        <span class="button hollowBtn go_payment pointer">Back</span>
+        <span class="button primaryBtn go_complete pointer">Confirm Order</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- COMPLETE -->
+  <article class="show-complete hideAll">
+    <div class="crumb muted">Complete</div>
+    <h2 class="pageTitle">Thank You! 🎉</h2>
+    <div class="wireCard text-center">
+      <div class="imgBox" style="height:140px;">ORDER CONFIRMED</div>
+      <p class="muted" style="margin-top:14px;">Your order has been placed successfully.</p>
+      <span class="button primaryBtn go_home pointer" style="display:inline-block;margin-top:14px;">Back to Home</span>
+    </div>
+  </article>
+
+  <!-- LOCATION -->
+  <article class="show-location hideAll">
+    <div class="crumb muted">Home &gt; Location</div>
+    <h2 class="pageTitle">Our <span class="accent">Store</span></h2>
+
+    <div class="wireCard" style="padding:0;overflow:hidden;border-radius:14px;">
+      <!-- Google Maps embed — Oshawa, Ontario -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46136.35!2d-78.8659!3d43.8971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d51dd5c2fe6a35%3A0x6ac5c7b9c0e3a69d!2sOshawa%2C%20ON!5e0!3m2!1sen!2sca!4v1"
+        width="100%"
+        height="400"
+        style="border:0;display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="wireCard" style="margin-top:16px;">
+      <div class="grid-x grid-padding-x">
+        <div class="cell medium-6">
+          <div class="footTitle" style="color:var(--text);font-size:16px;margin-bottom:8px;">📍 Store Address</div>
+          <p style="margin:0;font-size:15px;line-height:1.7;">
+            <strong>EasyMART Oshawa</strong><br>
+            Oshawa, Ontario<br>
+            Canada
+          </p>
+        </div>
+        <div class="cell medium-3">
+          <div class="footTitle" style="color:var(--text);font-size:16px;margin-bottom:8px;">🕐 Store Hours</div>
+          <p style="margin:0;font-size:14px;line-height:1.9;color:var(--muted);">
+            Mon – Fri: 8am – 9pm<br>
+            Saturday: 8am – 8pm<br>
+            Sunday: 10am – 6pm
+          </p>
+        </div>
+        <div class="cell medium-3">
+          <div class="footTitle" style="color:var(--text);font-size:16px;margin-bottom:8px;">📞 Contact</div>
+          <p style="margin:0;font-size:14px;line-height:1.9;color:var(--muted);">
+            Phone: (905) 555-0100<br>
+            Email: info@easymart.ca
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="siteFooter">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="cell medium-3"><div class="footTitle">Deals</div><span class="go_home pointer" style="color:#fff;opacity:.85;font-size:13px;display:block;cursor:pointer;">What's New</span><span class="go_home pointer" style="color:#fff;opacity:.85;font-size:13px;display:block;cursor:pointer;">Popular Deals</span></div>
+      <div class="cell medium-3"><div class="footTitle">Contact</div><span class="go_location pointer" style="color:#fff;opacity:.85;font-size:13px;display:block;cursor:pointer;">About Us</span><span class="go_location pointer" style="color:#fff;opacity:.85;font-size:13px;display:block;cursor:pointer;">Support</span></div>
+      <div class="cell medium-3"><div class="footTitle">Products</div><span class="click-department pointer" data-name="Drinks and Snacks" style="color:#fff;opacity:.85;font-size:13px;display:block;cursor:pointer;">Departments</span><span class="go_search pointer" style="color:#fff;opacity:.85;font-size:13px;display:block;cursor:pointer;">Search</span></div>
+      <div class="cell medium-3"><div class="footTitle">Socials</div><span class="muted">◎ ◻ ✕</span></div>
+    </div>
+    <div class="footBottom muted">© 2026 EasyMART — Educational Project</div>
+  </div>
+</footer>
+
+<script src="assets/js/vendor.js"></script>
+<script src="assets/js/foundation.js"></script>
+<script src="assets/js/sammy.min.js" type="text/javascript"></script>
+<script src="assets/js/sammy.template.js" type="text/javascript"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

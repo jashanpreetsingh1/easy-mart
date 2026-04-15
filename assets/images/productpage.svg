@@ -1,0 +1,227 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="1440" height="1600" viewBox="0 0 1440 1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill:#FFFFFF; }
+      .card { fill:#FFFFFF; stroke:#E5E7EB; stroke-width:1; }
+      .text { fill:#111827; font-family: Inter, Poppins, Arial, sans-serif; }
+      .muted { fill:#6B7280; font-family: Inter, Poppins, Arial, sans-serif; }
+      .price { fill:#D97706; font-family: Inter, Poppins, Arial, sans-serif; }
+      .btn { fill:#0EA5A4; }
+      .footerBg { fill:#2F2A27; }
+      .footerText { fill:#FFFFFF; font-family: Inter, Poppins, Arial, sans-serif; }
+      .footerMuted { fill:#D1D5DB; font-family: Inter, Poppins, Arial, sans-serif; }
+      .strokeMuted { stroke:#E5E7EB; stroke-width:1; }
+    </style>
+  </defs>
+
+  <!-- Page background -->
+  <rect class="bg" x="0" y="0" width="1440" height="1600"></rect>
+
+  <!-- =========================
+       Header
+  ========================== -->
+  <g id="Header">
+    <rect x="0" y="0" width="1440" height="88" fill="#FFFFFF"></rect>
+    <line x1="0" y1="88" x2="1440" y2="88" class="strokeMuted"></line>
+
+    <!-- Content bounds: 120px side padding -->
+    <!-- Logo -->
+    <text x="120" y="54" class="text" font-size="22" font-weight="800">Easy</text>
+    <text x="168" y="54" class="text" font-size="22" font-weight="900">MART</text>
+
+    <!-- Center nav + search -->
+    <g transform="translate(470,22)">
+      <text x="0" y="30" class="text" font-size="14" font-weight="700">Departments</text>
+      <!-- caret -->
+      <path d="M98 24 L106 24 L102 30 Z" fill="#111827"></path>
+
+      <!-- Search field -->
+      <rect x="136" y="8" width="420" height="40" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"></rect>
+      <!-- magnifier -->
+      <circle cx="160" cy="28" r="7" fill="none" stroke="#6B7280" stroke-width="2"></circle>
+      <line x1="165" y1="33" x2="172" y2="40" stroke="#6B7280" stroke-width="2" stroke-linecap="round"></line>
+      <text x="182" y="32" class="muted" font-size="13" font-weight="600">Search products…</text>
+    </g>
+
+    <!-- Right icons -->
+    <g transform="translate(1200,24)">
+      <!-- user icon -->
+      <circle cx="20" cy="20" r="9" fill="none" stroke="#111827" stroke-width="2"></circle>
+      <path d="M6 44 C10 34, 30 34, 34 44" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round"></path>
+      <!-- cart icon -->
+      <g transform="translate(58,2)">
+        <path d="M6 10 H16 L20 28 H44 L48 14 H22" fill="none" stroke="#111827" stroke-width="2" stroke-linejoin="round"></path>
+        <circle cx="24" cy="36" r="3.5" fill="#111827"></circle>
+        <circle cx="40" cy="36" r="3.5" fill="#111827"></circle>
+      </g>
+      <!-- small badge -->
+      <g transform="translate(106,0)">
+        <circle cx="10" cy="10" r="10" fill="#D97706"></circle>
+        <text x="10" y="14" text-anchor="middle" class="footerText" font-size="12" font-weight="900">2</text>
+      </g>
+    </g>
+
+    <!-- Divider nav row (optional thin line like ref) -->
+    <line x1="120" y1="88" x2="1320" y2="88" class="strokeMuted"></line>
+  </g>
+
+  <!-- =========================
+       Product Detail
+  ========================== -->
+  <g id="Product">
+    <!-- Layout constants:
+         page padding 120, gap 48
+         left col 520, right col 632 (fits 1200 total)
+    -->
+    <!-- Breadcrumb -->
+    <text x="120" y="150" class="muted" font-size="13" font-weight="600">Home</text>
+    <text x="160" y="150" class="muted" font-size="13" font-weight="600"> &gt; </text>
+    <text x="180" y="150" class="muted" font-size="13" font-weight="700">Dairy &amp; Eggs</text>
+
+    <!-- Left column: image card -->
+    <g transform="translate(120,190)">
+      <rect class="card" x="0" y="0" width="520" height="420" rx="14" ry="14"></rect>
+      <!-- image container -->
+      <rect x="32" y="32" width="456" height="320" rx="12" ry="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"></rect>
+      <text x="260" y="200" text-anchor="middle" class="muted" font-size="14" font-weight="700">PLACE PRODUCT IMAGE HERE</text>
+      <text x="260" y="224" text-anchor="middle" class="muted" font-size="12" font-weight="600">(white background, centered)</text>
+      <!-- subtle shadow hint -->
+      <rect x="32" y="368" width="456" height="20" rx="10" ry="10" fill="#F5F6F8" stroke="#E5E7EB" stroke-width="1"></rect>
+      <text x="260" y="383" text-anchor="middle" class="muted" font-size="11" font-weight="700">Image caption area (optional)</text>
+    </g>
+
+    <!-- Right column: product info -->
+    <g transform="translate(688,190)">
+      <!-- Brand -->
+      <text x="0" y="28" class="muted" font-size="13" font-weight="800">Organic Valley</text>
+
+      <!-- Product name -->
+      <text x="0" y="66" class="text" font-size="30" font-weight="900">Half &amp; Half Organic</text>
+
+      <!-- Product code small (top-right info style) -->
+      <text x="0" y="92" class="muted" font-size="13" font-weight="700">0130000011208</text>
+
+      <!-- Price + size -->
+      <text x="0" y="150" class="price" font-size="34" font-weight="900">$1.99</text>
+      <text x="0" y="176" class="muted" font-size="14" font-weight="700">946 ml</text>
+
+      <!-- Actions row -->
+      <g transform="translate(0,206)">
+        <!-- Add to cart button -->
+        <rect x="0" y="0" width="170" height="44" rx="10" ry="10" class="btn"></rect>
+        <text x="85" y="28" text-anchor="middle" class="footerText" font-size="14" font-weight="900">Add to Cart</text>
+
+        <!-- Heart icon -->
+        <g transform="translate(202,7)">
+          <path d="M16 28
+                   C16 28, 2 19, 2 10
+                   C2 5, 6 2, 10 2
+                   C13 2, 15 4, 16 6
+                   C17 4, 19 2, 22 2
+                   C26 2, 30 5, 30 10
+                   C30 19, 16 28, 16 28 Z" fill="#D97706"></path>
+        </g>
+      </g>
+
+      <!-- Divider -->
+      <line x1="0" y1="280" x2="632" y2="280" stroke="#E5E7EB" stroke-width="1"></line>
+
+      <!-- Product Description -->
+      <text x="0" y="326" class="text" font-size="20" font-weight="900">Product Description</text>
+
+      <!-- Paragraphs (manual line breaks so Illustrator won’t overflow) -->
+      <text x="0" y="360" class="muted" font-size="14" font-weight="600">
+        <tspan x="0" dy="0">Ultra pasteurized. Grade A. Pasture-raised. Farmer-owned. USDA Organic. Organic and farmer-owned since 1988.</tspan>
+        <tspan x="0" dy="22">Great taste for the common good.</tspan>
+
+        <tspan x="0" dy="30">What makes our half &amp; half taste so good? It’s simple—we’re always organic, and our milk comes from our own</tspan>
+        <tspan x="0" dy="22">pastured cows. We love what we do, and you can taste the creamy difference. That’s our promise.</tspan>
+
+        <tspan x="0" dy="30">We’re a co-op of family farmers, dedicated to the well-being of the communities where we live, the planet that we</tspan>
+        <tspan x="0" dy="22">share, and better food for you.</tspan>
+
+        <tspan x="0" dy="30">Pasture-raised. Transform your experience. Savor the extra-rich flavor and creamy smoothness of our traditional</tspan>
+        <tspan x="0" dy="22">blend of pure organic milk and cream. Stir it in and discover how it raises your favorite beverages and recipes to</tspan>
+        <tspan x="0" dy="22">a place beyond delicious. Add it up!</tspan>
+
+        <tspan x="0" dy="30">Every gulp counts toward a healthier planet, when you’re drinking Organic Valley milk. You help us to farm without</tspan>
+        <tspan x="0" dy="22">persistent pesticides and we show you how to add up your score. Share it with friends and challenge them to add</tspan>
+        <tspan x="0" dy="22">up theirs! Congratulations for choosing products produced without antibiotics, synthetic hormones and</tspan>
+        <tspan x="0" dy="22">persistent pesticides. Homogenized. Oregon Tilth Certified Organic.</tspan>
+      </text>
+
+      <!-- Bottom info blocks -->
+      <g transform="translate(0,820)">
+        <text x="0" y="0" class="text" font-size="18" font-weight="900">Product Weight</text>
+        <text x="0" y="26" class="muted" font-size="14" font-weight="700">946 ml</text>
+
+        <text x="0" y="76" class="text" font-size="18" font-weight="900">Product Code</text>
+        <text x="0" y="102" class="muted" font-size="14" font-weight="700">0130000011208</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- =========================
+       Footer
+  ========================== -->
+  <g id="Footer" transform="translate(0,1320)">
+    <rect class="footerBg" x="0" y="0" width="1440" height="280"></rect>
+
+    <!-- columns area -->
+    <g transform="translate(120,54)">
+      <!-- Column 1 -->
+      <text x="0" y="0" class="footerText" font-size="14" font-weight="900">Deals</text>
+      <text x="0" y="26" class="footerMuted" font-size="13" font-weight="700">What’s New</text>
+      <text x="0" y="48" class="footerMuted" font-size="13" font-weight="700">Popular Deals</text>
+
+      <!-- Column 2 -->
+      <g transform="translate(220,0)">
+        <text x="0" y="0" class="footerText" font-size="14" font-weight="900">Contact</text>
+        <text x="0" y="26" class="footerMuted" font-size="13" font-weight="700">About Us</text>
+        <text x="0" y="48" class="footerMuted" font-size="13" font-weight="700">Contact Us</text>
+        <text x="0" y="70" class="footerMuted" font-size="13" font-weight="700">Support</text>
+      </g>
+
+      <!-- Column 3 -->
+      <g transform="translate(440,0)">
+        <text x="0" y="0" class="footerText" font-size="14" font-weight="900">Products</text>
+        <text x="0" y="26" class="footerMuted" font-size="13" font-weight="700">Our Partners</text>
+        <text x="0" y="48" class="footerMuted" font-size="13" font-weight="700">Pricing</text>
+      </g>
+
+      <!-- Column 4 -->
+      <g transform="translate(660,0)">
+        <text x="0" y="0" class="footerText" font-size="14" font-weight="900">Socials</text>
+        <!-- simple social icons -->
+        <g transform="translate(0,18)">
+          <circle cx="14" cy="14" r="10" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+          <path d="M14 8 v12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M10 12 h8" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+
+          <g transform="translate(36,0)">
+            <circle cx="14" cy="14" r="10" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+            <path d="M10 18 C12 10, 16 10, 18 18" fill="none" stroke="#FFFFFF" stroke-width="2"></path>
+          </g>
+
+          <g transform="translate(72,0)">
+            <circle cx="14" cy="14" r="10" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="14" cy="14" r="4" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="19" cy="9" r="1.5" fill="#FFFFFF"></circle>
+          </g>
+
+          <g transform="translate(108,0)">
+            <circle cx="14" cy="14" r="10" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+            <path d="M9 9 L19 19 M19 9 L9 19" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- divider line -->
+    <line x1="120" y1="190" x2="1320" y2="190" stroke="rgba(255,255,255,0.25)" stroke-width="1"></line>
+
+    <!-- copyright -->
+    <text x="720" y="236" text-anchor="middle" class="footerMuted" font-size="13" font-weight="800">© 2026 EasyMART</text>
+  </g>
+</svg>

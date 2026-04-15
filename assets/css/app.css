@@ -1,0 +1,473 @@
+/* EasyMART app.css — fixed per professor feedback */
+
+.hideAll { display: none; }
+
+:root{
+  --text:#111827;
+  --muted:#6B7280;
+  --line:#E5E7EB;
+  --bg:#F5F6F8;
+  --teal:#0EA5A4;
+  --orange:#D97706;
+  --footer:#2F2A27;
+}
+
+body{
+  color: var(--text);
+  background:#fff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.siteHeader{
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+.headerRow{ padding: 18px 0; }
+.logo{
+  font-weight: 800;
+  font-size: 34px;
+  color: var(--text);
+  text-decoration:none;
+}
+.logo span{ color: var(--teal); }
+
+.navCenter{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.navLink{
+  font-weight:700;
+  color: var(--text);
+  text-decoration:none;
+}
+.searchWrap{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 10px;
+  min-width: 360px;
+}
+.searchWrap input{
+  border:none;
+  margin:0;
+  box-shadow:none;
+  height: 26px;
+}
+.searchIcon{ color: var(--muted); }
+.searchGo{
+  font-size:12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border:1px solid var(--line);
+  text-decoration:none;
+  color: var(--muted);
+}
+.headerIcons .iconBtn{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+}
+.headerIcons{display:flex;gap:10px;justify-content:flex-end;align-items:center;padding:10px 0}
+.badge{
+  display:inline-block;
+  margin-left:8px;
+  background: var(--orange);
+  color:#fff;
+  font-weight:800;
+  font-size:12px;
+  border-radius:999px;
+  padding: 4px 8px;
+  text-decoration:none;
+}
+
+/* ===== CATEGORY / DEPARTMENTS NAV ===== */
+/* Professor: high z-index so dropdown always appears on top of everything */
+.categoryRow{
+  border-top:1px solid var(--line);
+  position: relative;
+  z-index: 10000;
+}
+.dept-nav {
+  position: relative;
+  display: inline-block;
+  z-index: 10000;
+}
+.dept-nav-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px 10px 0;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+}
+.dept-nav-label:hover { color: var(--teal); }
+
+.location-dropdown {
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 99999;           /* Professor: always use very big numbers */
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(17,24,39,0.13);
+  min-width: 220px;
+  max-height: 380px;
+  overflow-y: auto;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 6px 0 !important;
+}
+.dept-nav:hover .location-dropdown {
+  display: block !important;
+}
+.location-dropdown li {
+  padding: 9px 18px;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.location-dropdown li:hover {
+  background: #f0fdf9;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* ===== TASK 1 & 2: user name + logout dropdown ===== */
+#user_name { position: relative; display: inline-block; }
+.userDrop {
+  display: none;
+  position: absolute;
+  right: 0; top: 110%;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(17,24,39,.12);
+  min-width: 130px;
+  z-index: 99999;           /* Professor: big z-index */
+  padding: 6px 0;
+}
+#user_name:hover .userDrop { display: block; }
+.userDropItem {
+  display: block;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+.userDropItem:hover { color: var(--teal); background: var(--bg); }
+
+/* ===== APP SHELL ===== */
+.appShell{ padding: 22px 0 40px; }
+.crumb{ font-size:14px; margin: 8px 0 12px; }
+.muted{ color: var(--muted); }
+.accent{ color: var(--orange); }
+.pageTitle{ font-size:32px; margin: 0 0 10px; }
+.titleRow{ margin-bottom: 6px; }
+.controlsRow{
+  font-size:14px;
+  color:#374151;
+  padding: 8px 0 10px;
+}
+.selectFake{
+  display:inline-block;
+  border:1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-right: 14px;
+}
+.filtersFake{ margin-left: 8px; }
+.divider{ height:1px; background: var(--line); margin: 14px 0; }
+
+/* ===== CARDS ===== */
+.wireCard{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 22px rgba(17,24,39,.06);
+}
+.sectionWire{
+  background: #F3F4F6;
+  border-radius: 14px;
+  padding: 18px 18px 22px;
+  margin-top: 18px;
+}
+.sectionTitle{
+  font-size:20px;
+  font-weight:800;
+  margin: 0 0 14px;
+}
+
+/* ===== IMAGE BOX BASE ===== */
+/* Professor: image goes RIGHT to the edge — no blue/grey gap
+   Use white background, solid keyline border, no padding on base imgBox */
+.imgBox{
+  background: #ffffff;
+  border: 1px solid var(--line);   /* professor: light keyline is fine */
+  border-radius: 10px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-weight: 700;
+  overflow: hidden;                /* image stays inside */
+  position: relative;
+}
+
+/* All images inside imgBox fill edge-to-edge, no gap */
+.imgBox img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== PRODUCT CARDS (department + home grid) ===== */
+/* Professor: white background on product image, image to the edges, keyline */
+.productCard .imgBox,
+.deptProdCard .imgBox {
+  background: #ffffff;      /* Professor: full white — no grey/blue */
+  padding: 0;               /* Professor: image to the edges, no gap */
+  height: 160px;
+  border: 1px solid var(--line);
+}
+
+/* ===== DEPARTMENT CARDS (home page grid) ===== */
+.deptCard .imgBox {
+  height: 180px;
+  background: #fff;
+  padding: 0;
+  border: 1px solid var(--line);
+}
+
+/* ===== SINGLE PRODUCT PAGE ===== */
+/* Professor: make it white all the way, make picture bigger */
+.show-product .imgBox.bigBox {
+  height: 340px;
+  background: #ffffff;      /* Professor: full white */
+  padding: 24px;            /* some breathing room for product image */
+  border: 1px solid var(--line);
+}
+/* Fallback bigBox */
+.imgBox.bigBox { height: 240px; background: #ffffff; }
+.imgBox.tall    { height: 180px; }
+
+/* ===== HERO ===== */
+.heroWire{ background: var(--bg); }
+.heroTitle{ font-size:38px; font-weight:900; margin: 0 0 14px; }
+.heroMedia{
+  height: 260px;
+  padding: 0;
+}
+.heroMedia img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  display:block;
+}
+
+/* ===== BUTTONS ===== */
+.primaryBtn{
+  background: var(--teal) !important;
+  border-radius: 10px !important;
+  font-weight: 800 !important;
+}
+.hollowBtn{
+  background:#fff !important;
+  border:1px solid var(--line) !important;
+  border-radius: 10px !important;
+  color: var(--text) !important;
+  font-weight: 800 !important;
+}
+
+/* ===== DEPT CARD ===== */
+.deptCard{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+  padding: 14px;
+  min-height: 260px;
+}
+.cardLabel{
+  text-align:center;
+  font-weight:800;
+  margin-top: 12px;
+}
+
+/* ===== PRODUCT CARD ===== */
+.productCard {
+  padding: 0;                /* Professor: no extra padding so image goes to edge */
+  overflow: hidden;
+}
+.productCard .imgBox {
+  border-radius: 10px 10px 0 0;   /* top corners only rounded, flush to card edge */
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid var(--line);
+}
+.productCard, .deptProdCard{
+  text-decoration:none;
+  color:inherit;
+  display:flex;
+  flex-direction:column;
+  height: 100%;
+}
+/* Professor: price closer to product name — reduced margin */
+.productCard .card-body {
+  padding: 12px;
+}
+.brand{ font-size:12px; margin-top:8px; padding:0 12px; }
+.pName{
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 2px;          /* Professor: closer to price/brand */
+  line-height: 1.3;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  min-height: 37px;
+  padding: 0 12px;
+}
+.price{
+  font-size:18px;
+  font-weight:900;
+  margin-top: 2px;           /* Professor: price close to name */
+  color: var(--orange);
+  padding: 0 12px;
+}
+.pDesc{
+  font-size:13px;
+  line-height:1.4;
+  margin-top: 6px;
+  min-height: 40px;
+  max-height: 40px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 0 12px;
+  color: var(--muted);
+}
+.bigPrice{ font-size:34px; margin-top: 6px; }
+
+.actionRow{
+  margin-top:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding: 10px 12px 14px;
+}
+.btnSmall{
+  background: var(--teal);
+  color:#fff;
+  font-weight:800;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  flex: 1;
+  text-align:center;
+}
+.stepper{
+  border:1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight:800;
+  color:#374151;
+  white-space: nowrap;
+}
+.heart{ color: var(--orange); font-weight:900; font-size:18px; }
+.bigHeart{ font-size:24px; }
+
+.prodTitle{ margin: 4px 0 0; font-weight:900; }
+.prodActions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top: 16px;
+}
+.wireMeta{ margin-top: 14px; }
+.metaTitle{ font-weight:900; margin-bottom: 2px; }
+.flowBtns{
+  display:flex;
+  justify-content:space-between;
+  margin-top: 16px;
+}
+.wireList{ margin: 10px 0 0 16px; }
+.wireList a{ color: var(--teal); font-weight:700; text-decoration:none; }
+
+/* ===== FOOTER ===== */
+.siteFooter{
+  background: var(--footer);
+  color:#fff;
+  padding: 28px 0;
+  margin-top: 30px;
+}
+.siteFooter a{ color:#fff; opacity:.85; text-decoration:none; font-size:13px; }
+.footTitle{ font-weight:900; margin-bottom: 8px; }
+.footBottom{
+  text-align:center;
+  margin-top: 20px;
+  color: #D1D5DB;
+  font-size: 12px;
+}
+
+/* ===== MODAL ===== */
+.linkBtn{
+  color: var(--teal);
+  font-weight: 800;
+  text-decoration:none;
+}
+
+/* ===== TASK 4: department products grid ===== */
+.show-department .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* Home page featured products grid */
+#homeProductsGrid { margin-top: 8px; }
+#homeProductsGrid .cell { margin-bottom: 16px; }
+#homeProductsGrid .wireCard.productCard { height: 100%; box-sizing: border-box; }
+
+/* ===== TASK 5: clickable product image ===== */
+.click-product { display: block; cursor: pointer; }
+.click-product:hover .imgBox { border-color: var(--teal); }
+
+/* ===== QTY CONTROLS ===== */
+.qty-control { display:none; align-items:center; gap:6px; border:1px solid var(--line); border-radius:10px; padding:6px 10px; }
+.qty-control.is-active { display: flex; }
+.qty-btn { background:none; border:none; font-size:18px; font-weight:900; cursor:pointer; color:var(--text); padding:0 4px; }
+.qty-value { font-weight:800; font-size:15px; min-width:22px; text-align:center; }
+
+.pointer { cursor: pointer; }

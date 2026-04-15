@@ -1,0 +1,430 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="1420" height="1800" viewBox="0 0 1420 1800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .pageBg{fill:#FFFFFF;}
+      .sectionBg{fill:#F5F6F8;}
+      .card{fill:#FFFFFF;stroke:#E5E7EB;stroke-width:1;}
+      .text{fill:#111827;font-family:Inter,Poppins,Arial,sans-serif;}
+      .muted{fill:#6B7280;font-family:Inter,Poppins,Arial,sans-serif;}
+      .darkMuted{fill:#374151;font-family:Inter,Poppins,Arial,sans-serif;}
+      .price{fill:#D97706;font-family:Inter,Poppins,Arial,sans-serif;}
+      .btn{fill:#0EA5A4;}
+      .btnText{fill:#FFFFFF;font-family:Inter,Poppins,Arial,sans-serif;}
+      .footerBg{fill:#2F2A27;}
+      .footerMuted{fill:#D1D5DB;font-family:Inter,Poppins,Arial,sans-serif;}
+      .line{stroke:#E5E7EB;stroke-width:1;}
+    </style>
+  </defs>
+
+  <rect class="pageBg" x="0" y="0" width="1420" height="1800"></rect>
+
+  <!-- =========================
+       Header
+  ========================== -->
+  <g id="Header">
+    <rect x="0" y="0" width="1420" height="88" fill="#FFFFFF"></rect>
+    <line x1="0" y1="88" x2="1420" y2="88" class="line"></line>
+
+    <!-- Logo -->
+    <text x="120" y="54" class="text" font-size="22" font-weight="800">Easy</text>
+    <text x="168" y="54" class="text" font-size="22" font-weight="900">MART</text>
+
+    <!-- Center nav + search -->
+    <g transform="translate(430,22)">
+      <text x="0" y="30" class="text" font-size="14" font-weight="700">Departments</text>
+      <path d="M98 24 L106 24 L102 30 Z" fill="#111827"></path>
+
+      <rect x="136" y="8" width="420" height="40" rx="10" ry="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"></rect>
+      <circle cx="160" cy="28" r="7" fill="none" stroke="#6B7280" stroke-width="2"></circle>
+      <line x1="165" y1="33" x2="172" y2="40" stroke="#6B7280" stroke-width="2" stroke-linecap="round"></line>
+      <text x="182" y="32" class="muted" font-size="13" font-weight="600">Search products…</text>
+    </g>
+
+    <!-- Right icons -->
+    <g transform="translate(1188,24)">
+      <circle cx="20" cy="20" r="9" fill="none" stroke="#111827" stroke-width="2"></circle>
+      <path d="M6 44 C10 34, 30 34, 34 44" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round"></path>
+      <g transform="translate(58,2)">
+        <path d="M6 10 H16 L20 28 H44 L48 14 H22" fill="none" stroke="#111827" stroke-width="2" stroke-linejoin="round"></path>
+        <circle cx="24" cy="36" r="3.5" fill="#111827"></circle>
+        <circle cx="40" cy="36" r="3.5" fill="#111827"></circle>
+      </g>
+      <g transform="translate(106,0)">
+        <circle cx="10" cy="10" r="10" fill="#D97706"></circle>
+        <text x="10" y="14" text-anchor="middle" class="btnText" font-size="12" font-weight="900">5</text>
+      </g>
+    </g>
+
+    <!-- Category bar (simple like reference) -->
+    <rect x="0" y="88" width="1420" height="44" fill="#FFFFFF"></rect>
+    <line x1="0" y1="132" x2="1420" y2="132" class="line"></line>
+    <g transform="translate(120,116)">
+      <text x="0" y="0" class="darkMuted" font-size="13" font-weight="700">Meat</text>
+      <text x="120" y="0" class="darkMuted" font-size="13" font-weight="700">Dairy &amp; Eggs</text>
+      <text x="270" y="0" class="darkMuted" font-size="13" font-weight="700">Fruits &amp; Vegetables</text>
+      <text x="450" y="0" class="darkMuted" font-size="13" font-weight="700">Bread</text>
+      <text x="540" y="0" class="darkMuted" font-size="13" font-weight="800">Drinks</text>
+      <text x="630" y="0" class="darkMuted" font-size="13" font-weight="700">Snacks</text>
+      <text x="730" y="0" class="darkMuted" font-size="13" font-weight="700">Deli</text>
+      <text x="800" y="0" class="darkMuted" font-size="13" font-weight="700">Frozen</text>
+    </g>
+  </g>
+
+  <!-- =========================
+       Department Page Content
+  ========================== -->
+  <g id="Department">
+    <!-- Content background area -->
+    <rect x="0" y="132" width="1420" height="1408" fill="#FFFFFF"></rect>
+
+    <!-- Breadcrumb -->
+    <text x="120" y="176" class="muted" font-size="14" font-weight="600">Home &gt; Drinks</text>
+
+    <!-- Title -->
+    <text x="120" y="224" class="price" font-size="32" font-weight="600">Drinks</text>
+
+    <!-- Sort & Filter Row -->
+    <g transform="translate(120,254)">
+      <text x="0" y="18" class="darkMuted" font-size="14" font-weight="700">Sort by</text>
+
+      <!-- Dropdown -->
+      <rect x="62" y="0" width="170" height="30" rx="8" ry="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"></rect>
+      <text x="76" y="20" class="darkMuted" font-size="13" font-weight="700">Popularity</text>
+      <path d="M210 12 L220 12 L215 18 Z" fill="#374151"></path>
+
+      <!-- Filters label + icon -->
+      <text x="266" y="18" class="darkMuted" font-size="14" font-weight="700">Filters</text>
+      <path d="M318 6 H336 L328 16 V24" fill="none" stroke="#374151" stroke-width="2" stroke-linejoin="round"></path>
+
+      <!-- Right-side icons -->
+      <g transform="translate(1040,2)">
+        <!-- grid icon -->
+        <rect x="0" y="2" width="28" height="26" rx="6" ry="6" fill="#F5F6F8" stroke="#E5E7EB"></rect>
+        <g fill="#374151">
+          <rect x="7" y="8" width="4" height="4"></rect><rect x="13" y="8" width="4" height="4"></rect><rect x="19" y="8" width="4" height="4"></rect>
+          <rect x="7" y="14" width="4" height="4"></rect><rect x="13" y="14" width="4" height="4"></rect><rect x="19" y="14" width="4" height="4"></rect>
+        </g>
+
+        <!-- arrows icon -->
+        <rect x="36" y="2" width="28" height="26" rx="6" ry="6" fill="#F5F6F8" stroke="#E5E7EB"></rect>
+        <path d="M46 15 L54 9 V21 Z" fill="#374151"></path>
+        <path d="M54 15 L62 9 V21 Z" fill="#374151"></path>
+      </g>
+    </g>
+
+    <!-- Divider under row -->
+    <line x1="120" y1="304" x2="1300" y2="304" class="line"></line>
+
+    <!-- Product grid area background -->
+    <rect x="0" y="320" width="1420" height="1110" class="sectionBg"></rect>
+
+    <!-- GRID SPECS:
+         left padding 120
+         card width 260
+         gap 24
+         columns 4 => start x: 120, 404, 688, 972
+         card height 430
+    -->
+
+    <!-- Helper: Card component structure (manual repeated) -->
+    <!-- Row 1 -->
+    <!-- Card 1 -->
+    <g transform="translate(120,356)">
+      <rect class="card" x="0" y="0" width="260" height="430" rx="8" ry="8"></rect>
+      <!-- image box -->
+      <rect x="20" y="16" width="220" height="180" rx="6" ry="6" fill="#FFFFFF" stroke="#E5E7EB"></rect>
+      <text x="130" y="104" text-anchor="middle" class="muted" font-size="12" font-weight="800">PLACE IMAGE</text>
+      <text x="130" y="124" text-anchor="middle" class="muted" font-size="11" font-weight="700">220×180</text>
+
+      <!-- brand -->
+      <text x="20" y="226" class="muted" font-size="12" font-weight="700">Coke</text>
+      <!-- name -->
+      <text x="20" y="248" class="text" font-size="15" font-weight="600">Diet Coke Cherry</text>
+      <text x="20" y="268" class="text" font-size="15" font-weight="600">Fridge 12-Pack</text>
+      <!-- desc 2 lines -->
+      <text x="20" y="292" class="muted" font-size="13" font-weight="600">
+        <tspan x="20" dy="0">Refreshing low-calorie soda</tspan>
+        <tspan x="20" dy="18">with a crisp cherry taste.</tspan>
+      </text>
+      <!-- price -->
+      <text x="20" y="350" class="price" font-size="18" font-weight="700">$5.08</text>
+
+      <!-- action row locked bottom -->
+      <g transform="translate(20,372)">
+        <rect x="0" y="0" width="140" height="34" rx="6" ry="6" class="btn"></rect>
+        <text x="70" y="22" text-anchor="middle" class="btnText" font-size="13" font-weight="800">Add to Cart</text>
+        <!-- heart -->
+        <path d="M206 29
+                 C206 29, 194 22, 194 14
+                 C194 10, 197 7, 201 7
+                 C204 7, 205 9, 206 10
+                 C207 9, 209 7, 212 7
+                 C216 7, 219 10, 219 14
+                 C219 22, 206 29, 206 29 Z" fill="none" stroke="#D97706" stroke-width="2"></path>
+      </g>
+    </g>
+
+    <!-- Card 2 (Quantity stepper) -->
+    <g transform="translate(404,356)">
+      <rect class="card" x="0" y="0" width="260" height="430" rx="8" ry="8"></rect>
+      <rect x="20" y="16" width="220" height="180" rx="6" ry="6" fill="#FFFFFF" stroke="#E5E7EB"></rect>
+      <text x="130" y="104" text-anchor="middle" class="muted" font-size="12" font-weight="800">PLACE IMAGE</text>
+      <text x="130" y="124" text-anchor="middle" class="muted" font-size="11" font-weight="700">220×180</text>
+
+      <text x="20" y="226" class="muted" font-size="12" font-weight="700">Coke</text>
+      <text x="20" y="248" class="text" font-size="15" font-weight="600">Diet Coke 20-Pack</text>
+      <text x="20" y="292" class="muted" font-size="13" font-weight="600">
+        <tspan x="20" dy="0">Refreshing low-calorie soda</tspan>
+        <tspan x="20" dy="18">with great classic taste.</tspan>
+      </text>
+      <text x="20" y="350" class="price" font-size="18" font-weight="700">$8.78</text>
+
+      <g transform="translate(20,372)">
+        <!-- stepper -->
+        <rect x="0" y="0" width="170" height="34" rx="6" ry="6" class="btn"></rect>
+        <text x="22" y="22" text-anchor="middle" class="btnText" font-size="18" font-weight="900">−</text>
+        <text x="85" y="22" text-anchor="middle" class="btnText" font-size="13" font-weight="900">15</text>
+        <text x="148" y="22" text-anchor="middle" class="btnText" font-size="18" font-weight="900">+</text>
+
+        <!-- heart -->
+        <path d="M206 29
+                 C206 29, 194 22, 194 14
+                 C194 10, 197 7, 201 7
+                 C204 7, 205 9, 206 10
+                 C207 9, 209 7, 212 7
+                 C216 7, 219 10, 219 14
+                 C219 22, 206 29, 206 29 Z" fill="none" stroke="#D97706" stroke-width="2"></path>
+      </g>
+    </g>
+
+    <!-- Card 3 -->
+    <g transform="translate(688,356)">
+      <rect class="card" x="0" y="0" width="260" height="430" rx="8" ry="8"></rect>
+      <rect x="20" y="16" width="220" height="180" rx="6" ry="6" fill="#FFFFFF" stroke="#E5E7EB"></rect>
+      <text x="130" y="104" text-anchor="middle" class="muted" font-size="12" font-weight="800">PLACE IMAGE</text>
+      <text x="130" y="124" text-anchor="middle" class="muted" font-size="11" font-weight="700">220×180</text>
+
+      <text x="20" y="226" class="muted" font-size="12" font-weight="700">Coke</text>
+      <text x="20" y="248" class="text" font-size="15" font-weight="600">Diet Coke with Lime</text>
+      <text x="20" y="268" class="text" font-size="15" font-weight="600">Soda Bottle</text>
+      <text x="20" y="292" class="muted" font-size="13" font-weight="600">
+        <tspan x="20" dy="0">Light and refreshing citrus</tspan>
+        <tspan x="20" dy="18">flavor with zero sugar.</tspan>
+      </text>
+      <text x="20" y="350" class="price" font-size="18" font-weight="700">$2.20</text>
+
+      <g transform="translate(20,372)">
+        <rect x="0" y="0" width="140" height="34" rx="6" ry="6" class="btn"></rect>
+        <text x="70" y="22" text-anchor="middle" class="btnText" font-size="13" font-weight="800">Add to Cart</text>
+        <path d="M206 29
+                 C206 29, 194 22, 194 14
+                 C194 10, 197 7, 201 7
+                 C204 7, 205 9, 206 10
+                 C207 9, 209 7, 212 7
+                 C216 7, 219 10, 219 14
+                 C219 22, 206 29, 206 29 Z" fill="none" stroke="#D97706" stroke-width="2"></path>
+      </g>
+    </g>
+
+    <!-- Card 4 -->
+    <g transform="translate(972,356)">
+      <rect class="card" x="0" y="0" width="260" height="430" rx="8" ry="8"></rect>
+      <rect x="20" y="16" width="220" height="180" rx="6" ry="6" fill="#FFFFFF" stroke="#E5E7EB"></rect>
+      <text x="130" y="104" text-anchor="middle" class="muted" font-size="12" font-weight="800">PLACE IMAGE</text>
+      <text x="130" y="124" text-anchor="middle" class="muted" font-size="11" font-weight="700">220×180</text>
+
+      <text x="20" y="226" class="muted" font-size="12" font-weight="700">Amy &amp; Brian</text>
+      <text x="20" y="248" class="text" font-size="15" font-weight="600">Coconut Juice</text>
+      <text x="20" y="292" class="muted" font-size="13" font-weight="600">
+        <tspan x="20" dy="0">Natural isotonic beverage</tspan>
+        <tspan x="20" dy="18">with refreshing taste.</tspan>
+      </text>
+      <text x="20" y="350" class="price" font-size="18" font-weight="700">$2.49</text>
+
+      <g transform="translate(20,372)">
+        <rect x="0" y="0" width="140" height="34" rx="6" ry="6" class="btn"></rect>
+        <text x="70" y="22" text-anchor="middle" class="btnText" font-size="13" font-weight="800">Add to Cart</text>
+        <path d="M206 29
+                 C206 29, 194 22, 194 14
+                 C194 10, 197 7, 201 7
+                 C204 7, 205 9, 206 10
+                 C207 9, 209 7, 212 7
+                 C216 7, 219 10, 219 14
+                 C219 22, 206 29, 206 29 Z" fill="none" stroke="#D97706" stroke-width="2"></path>
+      </g>
+    </g>
+
+    <!-- Row 2 -->
+    <!-- Card 5 -->
+    <g transform="translate(120,810)">
+      <rect class="card" x="0" y="0" width="260" height="430" rx="8" ry="8"></rect>
+      <rect x="20" y="16" width="220" height="180" rx="6" ry="6" fill="#FFFFFF" stroke="#E5E7EB"></rect>
+      <text x="130" y="104" text-anchor="middle" class="muted" font-size="12" font-weight="800">PLACE IMAGE</text>
+      <text x="130" y="124" text-anchor="middle" class="muted" font-size="11" font-weight="700">220×180</text>
+
+      <text x="20" y="226" class="muted" font-size="12" font-weight="700">Aqua Hydrate</text>
+      <text x="20" y="248" class="text" font-size="15" font-weight="600">Water Alkalized With</text>
+      <text x="20" y="268" class="text" font-size="15" font-weight="600">Electrolytes</text>
+      <text x="20" y="292" class="muted" font-size="13" font-weight="600">
+        <tspan x="20" dy="0">Supercharged hydration</tspan>
+        <tspan x="20" dy="18">with balanced electrolytes.</tspan>
+      </text>
+      <text x="20" y="350" class="price" font-size="18" font-weight="700">$28.99</text>
+
+      <g transform="translate(20,372)">
+        <rect x="0" y="0" width="140" height="34" rx="6" ry="6" class="btn"></rect>
+        <text x="70" y="22" text-anchor="middle" class="btnText" font-size="13" font-weight="800">Add to Cart</text>
+        <path d="M206 29
+                 C206 29, 194 22, 194 14
+                 C194 10, 197 7, 201 7
+                 C204 7, 205 9, 206 10
+                 C207 9, 209 7, 212 7
+                 C216 7, 219 10, 219 14
+                 C219 22, 206 29, 206 29 Z" fill="none" stroke="#D97706" stroke-width="2"></path>
+      </g>
+    </g>
+
+    <!-- Card 6 (Quantity stepper) -->
+    <g transform="translate(404,810)">
+      <rect class="card" x="0" y="0" width="260" height="430" rx="8" ry="8"></rect>
+      <rect x="20" y="16" width="220" height="180" rx="6" ry="6" fill="#FFFFFF" stroke="#E5E7EB"></rect>
+      <text x="130" y="104" text-anchor="middle" class="muted" font-size="12" font-weight="800">PLACE IMAGE</text>
+      <text x="130" y="124" text-anchor="middle" class="muted" font-size="11" font-weight="700">220×180</text>
+
+      <text x="20" y="226" class="muted" font-size="12" font-weight="700">Evian</text>
+      <text x="20" y="248" class="text" font-size="15" font-weight="600">Water, Natural</text>
+      <text x="20" y="292" class="muted" font-size="13" font-weight="600">
+        <tspan x="20" dy="0">Pure spring water with a</tspan>
+        <tspan x="20" dy="18">clean, crisp finish.</tspan>
+      </text>
+      <text x="20" y="350" class="price" font-size="18" font-weight="700">$1.50</text>
+
+      <g transform="translate(20,372)">
+        <rect x="0" y="0" width="170" height="34" rx="6" ry="6" class="btn"></rect>
+        <text x="22" y="22" text-anchor="middle" class="btnText" font-size="18" font-weight="900">−</text>
+        <text x="85" y="22" text-anchor="middle" class="btnText" font-size="13" font-weight="900">15</text>
+        <text x="148" y="22" text-anchor="middle" class="btnText" font-size="18" font-weight="900">+</text>
+
+        <path d="M206 29
+                 C206 29, 194 22, 194 14
+                 C194 10, 197 7, 201 7
+                 C204 7, 205 9, 206 10
+                 C207 9, 209 7, 212 7
+                 C216 7, 219 10, 219 14
+                 C219 22, 206 29, 206 29 Z" fill="none" stroke="#D97706" stroke-width="2"></path>
+      </g>
+    </g>
+
+    <!-- Card 7 -->
+    <g transform="translate(688,810)">
+      <rect class="card" x="0" y="0" width="260" height="430" rx="8" ry="8"></rect>
+      <rect x="20" y="16" width="220" height="180" rx="6" ry="6" fill="#FFFFFF" stroke="#E5E7EB"></rect>
+      <text x="130" y="104" text-anchor="middle" class="muted" font-size="12" font-weight="800">PLACE IMAGE</text>
+      <text x="130" y="124" text-anchor="middle" class="muted" font-size="11" font-weight="700">220×180</text>
+
+      <text x="20" y="226" class="muted" font-size="12" font-weight="700">Fiji</text>
+      <text x="20" y="248" class="text" font-size="15" font-weight="600">Water, Natural</text>
+      <text x="20" y="268" class="text" font-size="15" font-weight="600">Artisian</text>
+      <text x="20" y="292" class="muted" font-size="13" font-weight="600">
+        <tspan x="20" dy="0">Premium artesian water</tspan>
+        <tspan x="20" dy="18">from natural sources.</tspan>
+      </text>
+      <text x="20" y="350" class="price" font-size="18" font-weight="700">$20.00</text>
+
+      <g transform="translate(20,372)">
+        <rect x="0" y="0" width="140" height="34" rx="6" ry="6" class="btn"></rect>
+        <text x="70" y="22" text-anchor="middle" class="btnText" font-size="13" font-weight="800">Add to Cart</text>
+        <path d="M206 29
+                 C206 29, 194 22, 194 14
+                 C194 10, 197 7, 201 7
+                 C204 7, 205 9, 206 10
+                 C207 9, 209 7, 212 7
+                 C216 7, 219 10, 219 14
+                 C219 22, 206 29, 206 29 Z" fill="none" stroke="#D97706" stroke-width="2"></path>
+      </g>
+    </g>
+
+    <!-- Card 8 -->
+    <g transform="translate(972,810)">
+      <rect class="card" x="0" y="0" width="260" height="430" rx="8" ry="8"></rect>
+      <rect x="20" y="16" width="220" height="180" rx="6" ry="6" fill="#FFFFFF" stroke="#E5E7EB"></rect>
+      <text x="130" y="104" text-anchor="middle" class="muted" font-size="12" font-weight="800">PLACE IMAGE</text>
+      <text x="130" y="124" text-anchor="middle" class="muted" font-size="11" font-weight="700">220×180</text>
+
+      <text x="20" y="226" class="muted" font-size="12" font-weight="700">Evian</text>
+      <text x="20" y="248" class="text" font-size="15" font-weight="600">Water, Natural Spring</text>
+      <text x="20" y="292" class="muted" font-size="13" font-weight="600">
+        <tspan x="20" dy="0">Natural spring water with</tspan>
+        <tspan x="20" dy="18">a smooth, clean taste.</tspan>
+      </text>
+      <text x="20" y="350" class="price" font-size="18" font-weight="700">$30.00</text>
+
+      <g transform="translate(20,372)">
+        <rect x="0" y="0" width="140" height="34" rx="6" ry="6" class="btn"></rect>
+        <text x="70" y="22" text-anchor="middle" class="btnText" font-size="13" font-weight="800">Add to Cart</text>
+        <path d="M206 29
+                 C206 29, 194 22, 194 14
+                 C194 10, 197 7, 201 7
+                 C204 7, 205 9, 206 10
+                 C207 9, 209 7, 212 7
+                 C216 7, 219 10, 219 14
+                 C219 22, 206 29, 206 29 Z" fill="none" stroke="#D97706" stroke-width="2"></path>
+      </g>
+    </g>
+  </g>
+
+  <!-- =========================
+       Footer
+  ========================== -->
+  <g id="Footer" transform="translate(0,1540)">
+    <rect class="footerBg" x="0" y="0" width="1420" height="260"></rect>
+
+    <g transform="translate(120,56)">
+      <text x="0" y="0" fill="#FFFFFF" font-family="Inter,Poppins,Arial,sans-serif" font-size="14" font-weight="900">Deals</text>
+      <text x="0" y="26" class="footerMuted" font-size="13" font-weight="700">What’s New</text>
+      <text x="0" y="48" class="footerMuted" font-size="13" font-weight="700">Popular Deals</text>
+
+      <g transform="translate(220,0)">
+        <text x="0" y="0" fill="#FFFFFF" font-size="14" font-weight="900" font-family="Inter,Poppins,Arial,sans-serif">Contact</text>
+        <text x="0" y="26" class="footerMuted" font-size="13" font-weight="700">About Us</text>
+        <text x="0" y="48" class="footerMuted" font-size="13" font-weight="700">Contact Us</text>
+        <text x="0" y="70" class="footerMuted" font-size="13" font-weight="700">Support</text>
+      </g>
+
+      <g transform="translate(440,0)">
+        <text x="0" y="0" fill="#FFFFFF" font-size="14" font-weight="900" font-family="Inter,Poppins,Arial,sans-serif">Products</text>
+        <text x="0" y="26" class="footerMuted" font-size="13" font-weight="700">Our Partners</text>
+        <text x="0" y="48" class="footerMuted" font-size="13" font-weight="700">Pricing</text>
+      </g>
+
+      <g transform="translate(660,0)">
+        <text x="0" y="0" fill="#FFFFFF" font-size="14" font-weight="900" font-family="Inter,Poppins,Arial,sans-serif">Socials</text>
+        <g transform="translate(0,18)">
+          <circle cx="14" cy="14" r="10" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+          <path d="M14 8 v12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M10 12 h8" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+
+          <g transform="translate(36,0)">
+            <circle cx="14" cy="14" r="10" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+            <path d="M10 18 C12 10, 16 10, 18 18" fill="none" stroke="#FFFFFF" stroke-width="2"></path>
+          </g>
+
+          <g transform="translate(72,0)">
+            <circle cx="14" cy="14" r="10" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="14" cy="14" r="4" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="19" cy="9" r="1.5" fill="#FFFFFF"></circle>
+          </g>
+
+          <g transform="translate(108,0)">
+            <circle cx="14" cy="14" r="10" fill="none" stroke="#FFFFFF" stroke-width="2"></circle>
+            <path d="M9 9 L19 19 M19 9 L9 19" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <line x1="120" y1="184" x2="1300" y2="184" stroke="rgba(255,255,255,0.25)" stroke-width="1"></line>
+    <text x="710" y="228" text-anchor="middle" class="footerMuted" font-size="13" font-weight="800">© 2026 EasyMART</text>
+  </g>
+</svg>
